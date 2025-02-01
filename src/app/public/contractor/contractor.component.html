@@ -1,0 +1,23 @@
+<div class = "container col-md-6">
+    <h1 style="color:black;" > Registration Your Company</h1>
+    <h6 style="color: red;">This is a form for you to register your company</h6>
+      <form class=" container" (ngSubmit) ="addContractorData()">
+          <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label" style="color: rgb(12, 15, 17);">Copani Name</label>
+              <input class="form-control" id ="name" name = "name" [(ngModel)] = "contractor.name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Address</label>
+              <input class="form-control" id ="address" name = "address" [(ngModel)]= "contractor.address">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Email</label>
+              <input class="form-control" id ="email" name = "email" [(ngModel)]= "contractor.email">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Password</label>
+              <input class="form-control" id ="password" name = "password" [(ngModel)]= "contractor.password">
+            </div>
+            <button class="btn btn-primary" type="submit" >Register</button>
+      </form>
+  </div>
