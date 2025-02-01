@@ -1,41 +1,36 @@
 import { Injectable } from '@angular/core';
+import {User} from '../entityes/user';
+import { HttpClient } from '@angular/common/http';
+import {Login} from '../entityes/login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  users: any[] = [
-    {
-      id: 1,
-      name: "Catalin",
-      email: "catalin@gmail.com",
-      password: "abc"
-    },
-    {
-      id: 2,
-      name: "Mihai",
-      email: "mihai@gmail.com",
-      password: "abc"
-    },
-    {
-      id: 3,
-      name: "Sergiu",
-      email: "sergiu@gmail.com",
-      password: "abc"
-    },
+  registrationURL ="http://localhost:8080/auth/register"
+  authURL = "http://localhost:8080/auth/authenticate"
 
-  ]
+
+
   sessions: any;
-  constructor() {
+  authResponse: any;
+  constructor(private httpClient : HttpClient) {
   }
+
+  addUser(user :User){
+    console.log(user);
+    return this.httpClient.post(this.registrationURL,user)
+  }
+
+
 
   login(email: string,password: string){
-    let user = this.users.find((usr) => usr.email === email && usr.password === password);
-    if(user){
-      this.sessions = user;
-      localStorage.setItem('session',JSON.stringify(this.sessions));
-    }
-    return user;
+    console.log(email,password);
+    let login = new Login();
+    login.email = email;
+    login.password = password;
+    return this.httpClient.post(this.authURL,login);
   }
+
 }

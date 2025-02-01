@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AuthService} from '../admin/services/auth.service';
 import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {Login} from '../admin/entityes/login';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +20,11 @@ export class LoginComponent {
     });
   }
 
-  login(){
-     let user= this.authService.login(this.form.value.email,this.form.value.password);
-     if(!user){
-        alert("Invalid username or password");
-     }else {
-       this.router.navigateByUrl("/admin");
-     }
+  login : Login = new Login();
+  loginData(){
+    this.authService.login(this.login.email,this.login.password).subscribe(data =>{
+      alert("you have login")
+      console.log(data)
+    },error => alert("something went wrong"));
   }
 }
