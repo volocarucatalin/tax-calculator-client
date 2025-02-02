@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
-import {RouterModule} from '@angular/router';
+
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import {RouterModule} from '@angular/router';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    RouterModule
   ]
 })
-export class PublicModule { }
+export class PublicModule {
+}

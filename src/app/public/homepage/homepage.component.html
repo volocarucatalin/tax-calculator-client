@@ -1,10 +1,19 @@
 
-<video autoplay muted loop id="myVideo">
-  <source src="/public/homepagevideo.mp4" type="video/mp4">
-</video>
 
-<div id ="container">
-    <h1>Welcome to CVFinance</h1>
-    <button routerLink="login">Login</button>
-    <button routerLink="contractor">Register</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Assistance | Your Trusted Partner</title>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to Finance Assistance</h1>
+  <p>Your trusted partner in managing finances, securing loans, and planning for a brighter future.</p>
+  <p>We provide expert financial guidance to help you achieve your financial goals with ease.</p>
+  <a href="/homepage" class="cta-button">Explore Our Services</a>
+  <button (click)="logout()">LogOut</button>
 </div>
+</body>
+</html>
