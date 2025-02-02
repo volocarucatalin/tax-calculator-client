@@ -13,20 +13,21 @@ import {Login} from '../admin/entityes/login';
 
 export class LoginComponent {
   form!: FormGroup;
+
   constructor(private authService: AuthService,private fb: FormBuilder, private router :Router) {
     this.form = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
-
   login : Login = new Login();
   loginData(){
-    this.authService.login(this.login.email,this.login.password).subscribe(data =>{
-      alert("you have login")
-      this.router.navigateByUrl('/dashboard');
+    this.login = {
+      email: this.login.email,
+      password: this.login.password,
+    };
 
-    },error => alert("something went wrong"));
-
+    this.authService.login(this.login);
+    this.router.navigateByUrl('/dashboard');
   }
 }
