@@ -4,6 +4,7 @@ import { HomepageComponent } from './homepage.component';
 import { RouterLink, RouterModule } from '@angular/router';
 import {AppModule} from '../../app.module';
 import {LoginComponent} from '../../admin/login/login.component';
+import {AppComponent} from '../../app.component';
 
 
 
@@ -13,6 +14,7 @@ import {LoginComponent} from '../../admin/login/login.component';
   ],
   exports: [
     HomepageComponent,
+    AppComponent
 
   ],
   imports: [
