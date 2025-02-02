@@ -12,14 +12,29 @@ export class AuthService {
   authURL = "http://localhost:8080/auth/authenticate"
 
 
-  session: any;
 
+  session: any;
   constructor(private httpClient: HttpClient, private router: Router) {
+      this.session = AuthService.getSessionToken();
   }
+
+  static getSessionToken(): any {
+    const token = sessionStorage.getItem('token');
+    try {
+
+      return token ? JSON.parse(token) : null;
+    } catch (e) {
+
+      return token;
+    }
+
+  }
+
 
   addUser(user: User) {
     console.log(user);
     return this.httpClient.post(this.registrationURL, user)
+
   }
 
 
@@ -32,13 +47,16 @@ export class AuthService {
         if (token) {
           sessionStorage.setItem('token', token);
           console.log(token);
+          this.router.navigateByUrl('/home');
+
         }
+
       });
   }
 
   logout() {
-    this.session = undefined
-    sessionStorage.removeItem(this.session);
+    this.session = null;
+    sessionStorage.removeItem('token');
     this.router.navigateByUrl('/login');
   }
 }

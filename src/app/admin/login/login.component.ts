@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {AuthService} from '../admin/services/auth.service';
+import {AuthService} from '../services/auth.service';
 import {FormBuilder,FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {Login} from '../admin/entityes/login';
+import {Login} from '../entityes/login';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +28,7 @@ export class LoginComponent {
     };
 
     this.authService.login(this.login);
-    this.router.navigateByUrl('/dashboard');
+
   }
+
 }
