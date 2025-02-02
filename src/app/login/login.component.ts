@@ -24,7 +24,7 @@ export class LoginComponent {
   loginData(){
     this.authService.login(this.login.email,this.login.password).subscribe(data =>{
       alert("you have login")
-      this.router.navigateByUrl('/contractor');
+      this.router.navigateByUrl('/dashboard');
 
     },error => alert("something went wrong"));
 
