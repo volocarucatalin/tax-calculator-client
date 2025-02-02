@@ -11,6 +11,8 @@ import { HomepageModule } from './public/homepage/homepage.module';
 import { PublicModule } from './public/public.module';
 import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './login/login.component';
+import {ContractorModule} from './public/contractor/contractor.module';
+import { ContractorDashBordComponent } from './public/contractor/contractor-dash-bord/contractor-dash-bord.component';
 
 const routes: Routes=[
   { path: 'subContractor', component: CreateSubContractor },
@@ -22,7 +24,8 @@ const routes: Routes=[
     AppComponent,
     CreateSubContractor,
     ContractorComponent,
-    LoginComponent
+    LoginComponent,
+    ContractorDashBordComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,6 +36,7 @@ const routes: Routes=[
     PublicModule,
     HomepageModule,
     ReactiveFormsModule,
+    ContractorModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -24,7 +24,9 @@ export class LoginComponent {
   loginData(){
     this.authService.login(this.login.email,this.login.password).subscribe(data =>{
       alert("you have login")
-      console.log(data)
+      this.router.navigateByUrl('/contractor');
+
     },error => alert("something went wrong"));
+
   }
 }
