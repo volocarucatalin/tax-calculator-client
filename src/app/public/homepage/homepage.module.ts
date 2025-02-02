@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage.component';
-import { RouterLink, RouterModule } from '@angular/router';
+import {  RouterModule } from '@angular/router';
 import {AppModule} from '../../app.module';
-import {LoginComponent} from '../../admin/login/login.component';
+
 import {AppComponent} from '../../app.component';
+import {NavbarComponent} from '../navbar/navbar.component';
 
 
 
@@ -18,7 +19,7 @@ import {AppComponent} from '../../app.component';
 
   ],
   imports: [
-    CommonModule, RouterModule, AppModule,
+    CommonModule, RouterModule, AppModule, NavbarComponent,
   ]
 })
 export class HomepageModule { }
