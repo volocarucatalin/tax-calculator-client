@@ -1,5 +1,5 @@
 
-<div>
+<div class = "container py-5 h-100" style="display:compact;  padding: 0 ; margin-top: 60px ">
     <h1 style="color:black;" > Registration Your Company</h1>
     <h6 style="color: red;">This is a form for you to register your company</h6>
       <form class=" container" (ngSubmit) ="addContractorData()">
@@ -11,6 +11,14 @@
               <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Address</label>
               <input class="form-control" id ="address" name = "address" [(ngModel)]= "contractor.address">
             </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">First Name</label>
+          <input class="form-control" id ="firstName" name = "firstName" [(ngModel)]= "contractor.firstName">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Last Name</label>
+          <input class="form-control" id ="lastName" name = "lastName" [(ngModel)]= "contractor.lastName">
+        </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Email</label>
               <input class="form-control" id ="email" name = "email" [(ngModel)]= "contractor.email">
@@ -19,6 +27,11 @@
               <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Password</label>
               <input class="form-control" id ="password" name = "password" [(ngModel)]= "contractor.password">
             </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Role</label>
+          <input class="form-control" id ="role" name = "role" [(ngModel)]= "contractor.role">
+        </div>
+
             <button class="btn btn-primary" type="submit" >Register</button>
             <button class="btn btn-primary" type="submit" (click)="logout()" >Logout</button>
       </form>

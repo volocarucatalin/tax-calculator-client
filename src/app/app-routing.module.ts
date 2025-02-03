@@ -6,6 +6,7 @@ import {SubContractor} from './admin/entityes/sub-contractor';
 import {CreateSubContractor} from './public/sub-contractor/sub-contractor.component';
 import {HomepageComponent} from './public/homepage/homepage.component';
 import {authGuard} from './auth.guard';
+import {ContractorComponent} from './public/contractor/contractor.component';
 
 const routes: Routes = [
   { path : '', loadChildren: ()=>  import('./public/landingPage/public.module').then((m)=>m.PublicModule)},
@@ -16,9 +17,11 @@ const routes: Routes = [
     path: 'dashboard', component: ContractorDashBordComponent,canActivate: [authGuard]
   },
   {
+    path:'contractor', component: ContractorComponent
+  },
+  {
     path:'subContractor', component: CreateSubContractor,canActivate: [authGuard]
   },
-  {path:'admin', loadChildren :() => import('./admin/admin.module').then((m)=>m.AdminModule),canActivate: [authGuard]},
   {path:'home', component :HomepageComponent,canActivate: [authGuard]}
 
 ];

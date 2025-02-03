@@ -1,7 +1,10 @@
-#container {
-  padding: 20px;
-  margin: auto;
-  max-width: 600px;
+.container {
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .text-center {
   text-align: center;

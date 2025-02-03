@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import { Contractor } from '../entityes/contractor';
+import {AuthService} from './auth.service';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,18 +11,22 @@ import { Contractor } from '../entityes/contractor';
 export class ContractorService {
 
   baseURL = "http://localhost:8080/contractors/con/add";
+  private authService = inject(AuthService);
+  router = inject(Router);
 
 
 
-  constructor(private http: HttpClient) { }
+
+
+
+  constructor(private http: HttpClient, router: Router) {
+  }
 
 
 
 
- 
 
   addContractor(contractor :Contractor){
-    console.log(contractor)
-    return this.http.post(this.baseURL,contractor)
+    this.authService.addUser(contractor)
   }
 }
