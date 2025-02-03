@@ -9,7 +9,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContractorComponent } from './public/contractor/contractor.component';
 import { HomepageModule } from './public/homepage/homepage.module';
 import { PublicModule } from './public/landingPage/public.module';
-import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './admin/login/login.component';
 import {ContractorModule} from './public/contractor/contractor.module';
 import { ContractorDashBordComponent } from './public/contractor/contractor-dash-bord/contractor-dash-bord.component';

@@ -1,16 +1,17 @@
 nav
 {
   position:fixed;
+  z-index: 666;
   top: 0;
   left: 0;
   width: 100%;
-  align-items: center;
-  padding : 30px 150px;
+  align-items: flex-start;
+  padding-top:50px;
   justify-content: space-between;
 
 }
 nav ul{
-  position: fixed;
+  position: relative;
   justify-content: center;
   gap: 5em;
   margin-right: 25em;
@@ -31,5 +32,5 @@ nav > a{
 }
 
 section{
-  padding: 10%;
+  padding: 4%;
 }
