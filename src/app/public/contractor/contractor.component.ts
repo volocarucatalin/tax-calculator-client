@@ -22,13 +22,8 @@ export class ContractorComponent implements OnInit {
 
 
   addContractorData(){
-    try{
+
     this.contractorService.addContractor(this.contractor);
-    alert("Contractor data inserted")
-    }
-    catch(error){
-      alert("Unable to insert contractor")
-    }
   }
 
   logout(){

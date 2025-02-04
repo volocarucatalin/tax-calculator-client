@@ -89,33 +89,7 @@ export class AuthService {
     this.router.navigateByUrl('/login');
   }
 
-  getSessionToken(): any {
-    const token = sessionStorage.getItem('token');
-    try {
-      return token ? JSON.parse(token) : null;
-    } catch (e) {
-      return token;
-    }
-  }
 
 
-  getRoleByToken(token: any) {
-    let _token = token.split('.')[1];
-    this.session = JSON.parse(atob(_token));
-    console.log(this.session);
-  }
 
-  decodingToken(token: string) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace('/-/g', '+').replace('/_/g', '/');
-    const jasonPlayload = decodeURIComponent(
-      atob(base64)
-        .split('')
-        .map(function (c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join('')
-    );
-    return JSON.parse(jasonPlayload);
-  }
 }

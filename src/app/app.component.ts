@@ -14,19 +14,13 @@ export class AppComponent  implements OnInit{
   displayContractorMenu= false;
   displaySubContractorMenu= false;
   currentRole: any;
-  decodeToken: any;
 
 
   constructor(private authService: AuthService) {
   }
 
   ngOnInit(): void {
-    this.navBarDisplay();
-  }
-
-  navBarDisplay(){
-    this.decodeToken = this.authService.decodingToken(this.authService.getSessionToken());
-    console.log(this.decodeToken);
 
   }
+
 }
