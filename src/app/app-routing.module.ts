@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './admin/login/login.component';
-import {ContractorDashBordComponent} from './public/contractor/contractor-dash-bord/contractor-dash-bord.component';
+import {ContractorInfoComponent} from './public/contractor/contractor-info/./contractor-info.component';
 import {SubContractor} from './admin/entityes/sub-contractor';
 import {CreateSubContractor} from './public/sub-contractor/sub-contractor.component';
 import {HomepageComponent} from './public/homepage/homepage.component';
@@ -14,7 +14,7 @@ const routes: Routes = [
     path :'login',component: LoginComponent
   },
   {
-    path: 'dashboard', component: ContractorDashBordComponent,canActivate: [authGuard]
+    path: 'dashboard', component: ContractorInfoComponent,canActivate: [authGuard]
   },
   {
     path:'contractor', component: ContractorComponent
