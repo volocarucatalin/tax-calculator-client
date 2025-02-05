@@ -5,7 +5,7 @@
       <form class=" container" (ngSubmit) ="addContractorData()">
           <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label" style="color: rgb(12, 15, 17);">Copani Name</label>
-              <input class="form-control" id ="name" name = "name" [(ngModel)] = "contractor.name">
+              <input class="form-control" id ="name" name = "name" [(ngModel)] = "contractor.companyName">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Address</label>
@@ -27,10 +27,6 @@
               <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Password</label>
               <input class="form-control" id ="password" name = "password" [(ngModel)]= "contractor.password">
             </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Role</label>
-          <input class="form-control" id ="role" name = "role" [(ngModel)]= "contractor.role">
-        </div>
 
             <button class="btn btn-primary" type="submit" >Register</button>
             <button class="btn btn-primary" type="submit" (click)="logout()" >Logout</button>

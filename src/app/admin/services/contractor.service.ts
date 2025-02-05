@@ -27,6 +27,8 @@ export class ContractorService {
 
 
   addContractor(contractor :Contractor){
-    this.authService.addUser(contractor)
+    this.authService.addUserContractor(contractor).subscribe(data =>{
+      alert("Contractor data inserted")
+    },error => alert("Unable to insert Contractor"));
   }
 }
