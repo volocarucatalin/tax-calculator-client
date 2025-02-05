@@ -10,13 +10,11 @@ import {Observable} from 'rxjs';
 })
 export class AuthService {
 
-  registrationURL = "http://localhost:8080/auth/register"
-  contractorAddURL = "http://localhost:8080/contractors/con/add"
-  subContractorAddURL = "http://localhost:8080/sub-contractors/sub/add"
+  contractorRegistrationURL = "http://localhost:8080/auth/register/contractor"
+  subContractorAddURL = "http://localhost:8080/register/sub-contractor"
   authURL = "http://localhost:8080/auth/authenticate"
 
   session: any;
-  user: User = new User();
 
   constructor(private httpClient: HttpClient, private router: Router) {
     this.session = AuthService.getSessionToken();
@@ -35,36 +33,9 @@ export class AuthService {
   }
 
 
-    addUser(contractorData: Contractor): Observable<any> | void {
-        const CONTRACTOR_ROLE = 'CONTRACTOR';
+    addUserContractor(contractorData: Contractor) {
 
-        try {
-            if (!contractorData || contractorData.role !== CONTRACTOR_ROLE) {
-                alert('Invalid contractor data');
-                return;
-            }
-
-            this.mapContractorToUser(this.user, contractorData);
-
-            // HTTP requests
-            this.httpClient.post(this.contractorAddURL, contractorData).subscribe();
-            console.log(this.user);
-
-            return this.httpClient.post(this.registrationURL, this.user);
-
-        } catch (e) {
-            console.error('Error in addUser:', e);
-            alert('An error occurred. Please try again.');
-            return;
-        }
-    }
-
-    private mapContractorToUser(user: User, contractor: Contractor): void {
-        user.role = contractor.role;
-        user.email = contractor.email;
-        user.password = contractor.password;
-        user.firstName = contractor.firstName;
-        user.lastName = contractor.lastName;
+            return this.httpClient.post(this.contractorRegistrationURL, contractorData)
     }
 
   login(loginCredentials: { email: string, password: string }) {

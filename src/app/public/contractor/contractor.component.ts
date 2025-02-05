@@ -23,7 +23,7 @@ export class ContractorComponent implements OnInit {
 
   addContractorData(){
 
-    this.contractorService.addContractor(this.contractor);
+    this.contractorService.addContractor(this.contractor)
   }
 
   logout(){
