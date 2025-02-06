@@ -11,9 +11,12 @@ import {ContractorService} from '../../../admin/services/contractor.service';
 
 
 export class AllSubContractorsComponent implements OnInit{
-  contractorService = Inject(ContractorService);
   subContractor: any;
 
+  constructor(private contractorService: ContractorService
+  ) {
+    console.log("hello");
+  }
   ngOnInit(): void {
     let response = this.contractorService.getAllSubContractors();
     response.subscribe((data :any) => this.subContractor = data)

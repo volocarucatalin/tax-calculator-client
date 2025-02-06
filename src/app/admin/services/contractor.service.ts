@@ -1,4 +1,4 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {inject, Injectable} from '@angular/core';
 import {Contractor} from '../entityes/contractor';
 import {AuthService} from './auth.service';
@@ -28,8 +28,14 @@ export class ContractorService {
 
   getAllSubContractors() {
     const contractorId = Number(sessionStorage.getItem("userId"));
+    const token = sessionStorage.getItem("token");
 
-    return this.http.get(this.baseURL + "sub-contractors/" + contractorId)
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    };
+
+
+    return this.http.get(this.baseURL + "sub-contractors/" + contractorId, {headers});
 
   }
 }
