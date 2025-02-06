@@ -22,8 +22,6 @@ import { SubContractorGeneralInformationComponent } from './public/sub-contracto
 import { InvoiceComponent } from './public/invoice/invoice.component';
 
 const routes: Routes=[
-  { path: 'subContractor', component: CreateSubContractor },
-  {path: 'contractor' , component : ContractorComponent}
 ]
 
 @NgModule({

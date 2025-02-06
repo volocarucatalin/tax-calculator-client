@@ -1,1 +1,19 @@
-<p>all-sub-contractors works!</p>
+<div class ="container">
+<table class="table" style="margin-top: 0">
+  <thead>
+  <tr>
+    <th scope="col">User Id</th>
+    <th scope="col">Contractor Id</th>
+    <th scope="col">Utr</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let subContractors of subContractor">
+    <td>{{ subContractors.userId }}</td>
+    <td>{{ subContractors.contractorId }}</td>
+    <td>{{ subContractors.utr }}</td>
+  </tr>
+  </tbody>
+
+</table>
+</div>
