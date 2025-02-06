@@ -5,11 +5,10 @@
   bottom: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 3px solid #008075;
   .containerForm{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position:relative;
+    top: 0%;
+
+
   }
 }

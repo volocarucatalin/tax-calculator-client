@@ -44,8 +44,10 @@ export class AuthService {
     return this.httpClient.post(this.authURL, loginCredentials)
       .subscribe((response: any) => {
         const token = response?.token;
+        const userId = response?.userId;
         if (token) {
           sessionStorage.setItem('token', token);
+          sessionStorage.setItem('userId',userId);
           console.log(token);
           this.router.navigateByUrl('/home');
 

@@ -1,16 +1,27 @@
+<div class="container">
+  <h1 style="color:black;"> Registration Form</h1>
+  <form class=" containerForm" (ngSubmit)="addSubContractorData()">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label" style="color: rgb(12, 15, 17);">First Name</label>
+      <input class="form-control" id="firstName" name="firstName" [(ngModel)]="subContractor.firstName">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Last Name</label>
+      <input class="form-control" id="lastName" name="lastName" [(ngModel)]="subContractor.lastName">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Last Name</label>
+      <input class="form-control" id="email" name="email" [(ngModel)]="subContractor.email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Last Name</label>
+      <input class="form-control" id="password" type="password" name="password" [(ngModel)]="subContractor.password">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Last Name</label>
+      <input class="form-control" id ="utr" name = "utr" [(ngModel)]= "subContractor.utr">
+    </div>
 
-<div class = "container" >
-  <h1 style="color:black;" > Registration Form</h1>
-    <form class=" containerForm" (ngSubmit) ="addSubContractorData()">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label" style="color: rgb(12, 15, 17);">First Name</label>
-            <input class="form-control" id ="firstName" name = "firstName" [(ngModel)] = "subContractor.firstName">
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label" style="color: rgb(16, 17, 19);">Last Name</label>
-            <input class="form-control" id ="lastName" name = "lastName" [(ngModel)]= "subContractor.lastName">
-          </div>
-
-          <button class="btn btn-primary" type="submit">Reserve</button>
-    </form>
+    <button class="btn btn-primary" type="submit">Reserve</button>
+  </form>
 </div>
