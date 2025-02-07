@@ -1,74 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head>
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial;
-      font-size: 17px;
-    }
-
-    myVideo {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-    }
-
-    content {
-      position: fixed;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: #f1f1f1;
-      width: 100%;
-      padding: 20px;
-    }
-    content1 {
-      position: fixed;
-      top: 0;
-      background: rgba(0, 0, 0, 0);
-      color: #f1f1f1;
-      width: 100%;
-      padding: 0;
-    }
-
-    #myBtn {
-      width: 200px;
-      font-size: 18px;
-      padding: 10px;
-      border: none;
-      background: #000;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    #myBtn:hover {
-      background: #ddd;
-      color: black;
-    }
-  </style>
 </head>
 <body>
 
 <video autoplay muted loop id="myVideo">
   <source src="/homepagevideo.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
-<div class="content1">
 
-</div>
+</video>
 <div class="content">
-  <h1>CVFinance</h1>
-  <button id="myBtn" (click)="logout()" >Logout</button>
+  <button id = "myBtnLogin" (click)="goToLogIn()">
+    Login
+  </button >
+  <button id = "myBtnSignUp" (click)="gotToSignUp()">
+    Sing Up
+  </button>
 </div>
 </body>
 </html>

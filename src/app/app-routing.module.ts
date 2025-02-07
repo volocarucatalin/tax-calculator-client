@@ -10,7 +10,6 @@ import {ContractorComponent} from './public/contractor/contractor.component';
 import {AllSubContractorsComponent} from './public/contractor/all-sub-contractors/all-sub-contractors.component';
 
 const routes: Routes = [
-  { path : '', loadChildren: ()=>  import('./public/landingPage/public.module').then((m)=>m.PublicModule)},
   {
     path :'login',component: LoginComponent
   },
@@ -24,9 +23,12 @@ const routes: Routes = [
     path:'subContractor', component: CreateSubContractor,canActivate: [authGuard]
   },
   {
-    path :'all-subContractors', component: AllSubContractorsComponent
+    path :'all-subContractors', component: AllSubContractorsComponent ,canActivate : [authGuard]
   },
-  {path:'home', component :HomepageComponent,canActivate: [authGuard]}
+  {path:'', component : HomepageComponent },
+  {
+    path:'contractorInfo' ,component : ContractorInfoComponent , canActivate :[authGuard]
+  }
 
 ];
 

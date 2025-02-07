@@ -1,18 +1,12 @@
-nav
-{
-  position:relative;
-  z-index: 666;
-  align-items: flex-start;
-
-
-
-}
-nav ul{
-  position: relative;
-  justify-content: center;
-  gap: 5em;
-  margin-right: 25em;
-  list-style: none;
+nav ul button{
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
 }
 
+.navbar  a:active{
+
+}
+li{
+  cursor: pointer;
+}
 

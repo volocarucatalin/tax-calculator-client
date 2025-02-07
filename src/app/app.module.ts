@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContractorComponent } from './public/contractor/contractor.component';
 import { HomepageModule } from './public/homepage/homepage.module';
-import { PublicModule } from './public/landingPage/public.module';
 import { LoginComponent } from './admin/login/login.component';
 import {ContractorModule} from './public/contractor/contractor.module';
 import { ContractorInfoComponent } from './public/contractor/contractor-info/contractor-info.component';
@@ -37,7 +36,7 @@ const routes: Routes=[
     SubContractorInfoComponent,
     SubContractorInvoicesComponent,
     SubContractorGeneralInformationComponent,
-    InvoiceComponent
+    InvoiceComponent,
   ],
   imports: [
     HttpClientModule,
@@ -45,10 +44,9 @@ const routes: Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PublicModule,
     ReactiveFormsModule,
     ContractorModule,
-    NavbarComponent
+    NavbarComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -40,7 +40,6 @@ export class AuthService {
 
   login(loginCredentials: { email: string, password: string }) {
     console.log(loginCredentials.email, loginCredentials.password);
-
     return this.httpClient.post(this.authURL, loginCredentials)
       .subscribe((response: any) => {
         const token = response?.token;
@@ -49,8 +48,6 @@ export class AuthService {
           sessionStorage.setItem('token', token);
           sessionStorage.setItem('userId',userId);
           console.log(token);
-          this.router.navigateByUrl('/home');
-
         }
 
       });

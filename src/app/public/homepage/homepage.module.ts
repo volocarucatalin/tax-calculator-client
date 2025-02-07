@@ -15,7 +15,7 @@ import {NavbarComponent} from '../navbar/navbar.component';
   ],
   exports: [
     HomepageComponent,
-    AppComponent
+    AppComponent,
 
   ],
   imports: [

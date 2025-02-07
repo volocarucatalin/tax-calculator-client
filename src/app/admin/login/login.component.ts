@@ -28,6 +28,7 @@ export class LoginComponent {
     };
 
     this.authService.login(this.login);
+    this.router.navigateByUrl('/contractorInfo');
 
   }
 

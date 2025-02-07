@@ -1,8 +1,7 @@
 
 #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  resize:horizontal;
   min-width: 100%;
   min-height: 100%;
 }
@@ -18,7 +17,14 @@
 }
 
 /* Style the button used to pause/play the video */
-#myBtn {
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Style the button used to pause/play the video */
+#myBtnLogin {
   width: 200px;
   font-size: 18px;
   padding: 10px;
@@ -28,8 +34,15 @@
   cursor: pointer;
 }
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
+#myBtnSignUp {
+  margin-left: 78%;
+  width: 200px;
+  left: auto;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
 }
 

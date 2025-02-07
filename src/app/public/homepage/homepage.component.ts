@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from '../../admin/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -9,10 +10,18 @@ import {AuthService} from '../../admin/services/auth.service';
   styleUrl: './homepage.component.css'
 })
 export class HomepageComponent {
-constructor(private authService: AuthService) {
-}
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
-logout() {
-  this.authService.logout();
-}
+  goToLogIn() {
+    return this.router.navigateByUrl('/login');
+  }
+
+  gotToSignUp(){
+    return this.router.navigateByUrl('/contractor')
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }
