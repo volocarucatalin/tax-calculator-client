@@ -8,6 +8,7 @@ import {HomepageComponent} from './public/homepage/homepage.component';
 import {authGuard} from './auth.guard';
 import {ContractorComponent} from './public/contractor/contractor.component';
 import {AllSubContractorsComponent} from './public/contractor/all-sub-contractors/all-sub-contractors.component';
+import {InvoiceComponent} from './public/invoice/invoice.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'', component : HomepageComponent },
   {
     path:'contractorInfo' ,component : ContractorInfoComponent , canActivate :[authGuard]
-  }
+  },
+  {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuard]}
 
 ];
 

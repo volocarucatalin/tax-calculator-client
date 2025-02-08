@@ -33,9 +33,11 @@ export class ContractorService {
     let headers = {
       'Authorization': `Bearer ${token}`
     };
-
-
     return this.http.get(this.baseURL + "sub-contractors/" + contractorId, {headers});
+
+  }
+
+  updateSubContractor(){
 
   }
 }
