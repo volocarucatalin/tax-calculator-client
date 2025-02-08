@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="signup-form">
-  <form method="post">
+  <form method="post"  (ngSubmit)="createInvoice()">
     <h2>Create Invoice</h2>
     <p>Please fill in this form to create an Invoice!</p>
     <hr>
@@ -21,61 +21,41 @@
       <div class="input-group">
         <div class="input-group-prepend">
 					<span class="input-group-text">
-						<span class="fa fa-user"></span>
+						<span class="fa fa-address-card-o"></span>
 					</span>
         </div>
-        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        <input type="text" class="form-control" name="jobName" placeholder="Job Name" [ngModel]="invoice.jobName"  required="required">
       </div>
     </div>
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-prepend">
 					<span class="input-group-text">
-						<i class="fa fa-paper-plane"></i>
+						<i class="fa fa-calendar"></i>
 					</span>
         </div>
-        <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+        <input type="date" class="form-control" name="date" placeholder="Date" [ngModel]="invoice.date"
+               required="required">
       </div>
     </div>
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-prepend">
 					<span class="input-group-text">
-						<i class="fa fa-lock"></i>
+						<i class="fa fa-sort-numeric-asc"></i>
 					</span>
         </div>
-        <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+        <input type="text" class="form-control" name="days" placeholder="Amount of Days" [ngModel]="invoice.days" required="required">
       </div>
     </div>
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-prepend">
 					<span class="input-group-text">
-						<i class="fa fa-lock"></i>
-						<i class="fa fa-check"></i>
+						<i class="fa fa-money"></i>
 					</span>
         </div>
-        <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-					<span class="input-group-text">
-						<span class="fa fa-user"></span>
-					</span>
-        </div>
-        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-					<span class="input-group-text">
-						<span class="fa fa-user"></span>
-					</span>
-        </div>
-        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        <input type="text" class="form-control" name="amount" placeholder="Day Rate"  [ngModel]="invoice.amount" required="required">
       </div>
     </div>
     <div class="form-group">
