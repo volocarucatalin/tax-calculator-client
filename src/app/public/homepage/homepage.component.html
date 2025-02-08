@@ -11,12 +11,14 @@
 
 </video>
 <div class="content">
+  @if(sessionStorage.getItem('token') == null){
   <button id = "myBtnLogin" (click)="goToLogIn()">
     Login
   </button >
   <button id = "myBtnSignUp" (click)="gotToSignUp()">
     Sing Up
   </button>
+  }
 </div>
 </body>
 </html>

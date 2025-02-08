@@ -24,4 +24,6 @@ export class HomepageComponent {
   logout() {
     this.authService.logout();
   }
+
+  protected readonly sessionStorage = sessionStorage;
 }
