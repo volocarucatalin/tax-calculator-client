@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContractorComponent } from './public/contractor/contractor.component';
-import { HomepageModule } from './public/homepage/homepage.module';
 import { LoginComponent } from './admin/login/login.component';
 import {ContractorModule} from './public/contractor/contractor.module';
 import { ContractorInfoComponent } from './public/contractor/contractor-info/contractor-info.component';

@@ -21,3 +21,5 @@ describe('AllSubContractorsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
