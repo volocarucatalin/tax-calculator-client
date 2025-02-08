@@ -19,7 +19,6 @@ import { SubContractorInfoComponent } from './public/sub-contractor/sub-contract
 import { SubContractorInvoicesComponent } from './public/sub-contractor/sub-contractor-invoices/sub-contractor-invoices.component';
 import { SubContractorGeneralInformationComponent } from './public/sub-contractor/sub-contractor-general-information/sub-contractor-general-information.component';
 import { InvoiceComponent } from './public/invoice/invoice.component';
-
 const routes: Routes=[
 ]
 

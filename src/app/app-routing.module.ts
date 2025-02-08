@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path:'contractorInfo' ,component : ContractorInfoComponent , canActivate :[authGuard]
   },
-  {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuard]}
+  {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuard]},
+
 
 ];
 

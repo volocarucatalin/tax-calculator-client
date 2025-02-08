@@ -3,6 +3,7 @@ import {inject, Injectable} from '@angular/core';
 import {Contractor} from '../entityes/contractor';
 import {AuthService} from './auth.service';
 import {Router} from '@angular/router';
+import {SubContractor} from '../entityes/sub-contractor';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,16 @@ export class ContractorService {
 
   }
 
-  updateSubContractor(){
+  getSubContractorBasedOnContractor(){
 
+  }
+
+  updateSubContractor(subContractor :SubContractor){
+    const token = sessionStorage.getItem("token");
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    };
+
+    //return this.http.put(this.baseURL+"sub-contractors/" + )
   }
 }
