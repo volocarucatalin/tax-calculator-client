@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './admin/login/login.component';
-import {ContractorInfoComponent} from './public/contractor/contractor-info/./contractor-info.component';
-import {SubContractor} from './admin/entityes/sub-contractor';
+import {ContractorInfoComponent} from './public/contractor/contractor-info/contractor-info.component';
 import {CreateSubContractor} from './public/sub-contractor/sub-contractor.component';
 import {HomepageComponent} from './public/homepage/homepage.component';
 import {authGuard} from './auth.guard';
 import {ContractorComponent} from './public/contractor/contractor.component';
 import {AllSubContractorsComponent} from './public/contractor/all-sub-contractors/all-sub-contractors.component';
 import {InvoiceComponent} from './public/invoice/invoice.component';
+import {SubContractorInfoComponent} from './public/sub-contractor/sub-contractor-info/sub-contractor-info.component';
 
 const routes: Routes = [
   {
@@ -31,6 +31,8 @@ const routes: Routes = [
     path:'contractorInfo' ,component : ContractorInfoComponent , canActivate :[authGuard]
   },
   {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuard]},
+  {path : 'sub-contractor-info' , component : SubContractorInfoComponent, canActivate: [authGuard]}
+
 
 
 ];

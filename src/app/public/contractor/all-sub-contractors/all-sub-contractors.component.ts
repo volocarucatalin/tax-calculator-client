@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {ContractorService} from '../../../admin/services/contractor.service';
+import {SubContractor} from '../../../admin/entityes/sub-contractor';
 
 @Component({
   selector: 'app-all-sub-contractors',
@@ -23,4 +24,7 @@ export class AllSubContractorsComponent implements OnInit{
   }
 
 
+  onEdit(data: SubContractor) {
+    this.subContractor = data;
+  }
 }
