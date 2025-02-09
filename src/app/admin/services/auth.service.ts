@@ -47,6 +47,7 @@ export class AuthService {
         if (token) {
           sessionStorage.setItem('token', token);
           sessionStorage.setItem('userId',userId);
+          sessionStorage.setItem('role',response?.role);
           console.log(token);
         }
 
