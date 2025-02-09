@@ -34,7 +34,7 @@
 						<i class="fa fa-calendar"></i>
 					</span>
         </div>
-        <input type="date" class="form-control" name="date" placeholder="Date" [ngModel]="invoice.date"
+        <input type="date" class="form-control" name="date" placeholder="Date" [(ngModel)]="invoice.date"
                required="required">
       </div>
     </div>
@@ -45,7 +45,7 @@
 						<i class="fa fa-sort-numeric-asc"></i>
 					</span>
         </div>
-        <input type="text" class="form-control" name="days" placeholder="Amount of Days" [ngModel]="invoice.days" required="required">
+        <input type="text" class="form-control" name="days" placeholder="Amount of Days" [(ngModel)]="invoice.days" required="required">
       </div>
     </div>
     <div class="form-group">
@@ -55,7 +55,7 @@
 						<i class="fa fa-money"></i>
 					</span>
         </div>
-        <input type="text" class="form-control" name="amount" placeholder="Day Rate"  [ngModel]="invoice.amount" required="required">
+        <input type="text" class="form-control" name="amount" placeholder="Day Rate"  [(ngModel)]="invoice.amount" required="required">
       </div>
     </div>
     <div class="form-group">
