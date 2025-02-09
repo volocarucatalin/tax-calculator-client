@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SubContractorService} from '../../../admin/services/sub-contractor.service';
 
 @Component({
   selector: 'app-sub-contractor-invoices',
   standalone: false,
-  
+
   templateUrl: './sub-contractor-invoices.component.html',
   styleUrl: './sub-contractor-invoices.component.css'
 })
-export class SubContractorInvoicesComponent {
+export class SubContractorInvoicesComponent implements OnInit {
+
+  invoice: any;
+  totalPayment :any ;
+
+  constructor(private subContractorService: SubContractorService) { }
+
+  ngOnInit(): void {
+    let response = this.subContractorService.getAllSubContractorsInvoices();
+    response.subscribe(data => {
+      this.invoice = data;
+      this.totalPayment = this.invoice.days * this.invoice.amount
+      this.invoice.totalPayment = this.totalPayment;
+    })
+  }
 
 }

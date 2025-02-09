@@ -30,4 +30,14 @@ export class SubContractorService {
     return this.httpClient.post(this.baseURL +"/invoices/register",invoice ,{headers});
   }
 
+  getAllSubContractorsInvoices(){
+    const subContractorId = Number(sessionStorage.getItem("userId"));
+    const token = sessionStorage.getItem("token");
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    };
+    return this.httpClient.get(this.baseURL+
+      "/invoices/" + subContractorId, {headers});
+  }
+
 }
