@@ -1,6 +1,7 @@
 import {Contractor} from "./contractor";
 
 export class SubContractor {
+  userId !: number;
   contractorId !: number;
   firstName !: string;
   lastName !: string;

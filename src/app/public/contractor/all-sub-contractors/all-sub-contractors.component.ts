@@ -37,7 +37,14 @@ export class AllSubContractorsComponent implements OnInit{
 
   updateSubContractor() {
     console.log(this.selectedSubcontractor);
-    this.contractorService.updateSubContractor(this.selectedSubcontractor.utr)
+    this.contractorService.updateSubContractor(this.selectedSubcontractor).subscribe(
+      (response: any) => {
+        console.log('Sub-contractor updated successfully:', response);
+      },
+      (error: any) => {
+        console.error('Error updating sub-contractor:', error);
+      }
+    );
   }
 
   deleteSubContractor(subContractorId : number){
