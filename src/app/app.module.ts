@@ -12,12 +12,12 @@ import {ContractorModule} from './public/contractor/contractor.module';
 import { ContractorInfoComponent } from './public/contractor/contractor-info/contractor-info.component';
 import { NavbarComponent } from './public/navbar/navbar.component';
 import { AllSubContractorsComponent } from './public/contractor/all-sub-contractors/all-sub-contractors.component';
-import { InvoicesContractorComponent } from './public/contractor/invoice-contractor/invoices-contractor.component';
 import { ContractorGeneralInformationComponent } from './public/contractor/contractor-general-information/contractor-general-information.component';
 import { SubContractorInfoComponent } from './public/sub-contractor/sub-contractor-info/sub-contractor-info.component';
 import { SubContractorInvoicesComponent } from './public/sub-contractor/sub-contractor-invoices/sub-contractor-invoices.component';
 import { SubContractorGeneralInformationComponent } from './public/sub-contractor/sub-contractor-general-information/sub-contractor-general-information.component';
 import { InvoiceComponent } from './public/invoice/invoice.component';
+import { AllInvoicesContractorComponent } from './public/contractor/all-inoices-contractor/all-invoices-contractor.component';
 const routes: Routes=[
 ]
 
@@ -29,12 +29,12 @@ const routes: Routes=[
     LoginComponent,
     ContractorInfoComponent,
     AllSubContractorsComponent,
-    InvoicesContractorComponent,
     ContractorGeneralInformationComponent,
     SubContractorInfoComponent,
     SubContractorInvoicesComponent,
     SubContractorGeneralInformationComponent,
     InvoiceComponent,
+    AllInvoicesContractorComponent,
   ],
   imports: [
     HttpClientModule,

@@ -4,7 +4,7 @@ import { LoginComponent } from './admin/login/login.component';
 import {ContractorInfoComponent} from './public/contractor/contractor-info/contractor-info.component';
 import {CreateSubContractor} from './public/sub-contractor/sub-contractor.component';
 import {HomepageComponent} from './public/homepage/homepage.component';
-import {authGuard} from './auth.guard';
+import {authGuardContractor, authGuardSubContractor} from './auth.guard';
 import {ContractorComponent} from './public/contractor/contractor.component';
 import {AllSubContractorsComponent} from './public/contractor/all-sub-contractors/all-sub-contractors.component';
 import {InvoiceComponent} from './public/invoice/invoice.component';
@@ -12,32 +12,23 @@ import {SubContractorInfoComponent} from './public/sub-contractor/sub-contractor
 import {
   SubContractorInvoicesComponent
 } from './public/sub-contractor/sub-contractor-invoices/sub-contractor-invoices.component';
+import {
+  AllInvoicesContractorComponent
+} from './public/contractor/all-inoices-contractor/all-invoices-contractor.component';
 
 const routes: Routes = [
-  {
-    path :'login',component: LoginComponent
-  },
-  {
-    path: 'dashboard', component: ContractorInfoComponent,canActivate: [authGuard]
-  },
-  {
-    path:'contractor', component: ContractorComponent
-  },
-  {
-    path:'subContractor', component: CreateSubContractor,canActivate: [authGuard]
-  },
-  {
-    path :'all-subContractors', component: AllSubContractorsComponent ,canActivate : [authGuard]
-  },
+  {path :'login',component: LoginComponent},
   {path:'', component : HomepageComponent },
-  {
-    path:'contractorInfo' ,component : ContractorInfoComponent , canActivate :[authGuard]
-  },
+  {path:'contractor', component: ContractorComponent},
+  {path: 'dashboard', component: ContractorInfoComponent,canActivate: [authGuardContractor]},
+  {path:'subContractor', component: CreateSubContractor,canActivate: [authGuardContractor]},
+  {path :'all-subContractors', component: AllSubContractorsComponent ,canActivate : [authGuardContractor]},
+  {path:'contractorInfo' ,component : ContractorInfoComponent , canActivate :[authGuardContractor]},
+  {path : 'get-invoices-contractor', component :AllInvoicesContractorComponent, canActivate :[authGuardContractor]},
 
-
-  {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuard]},
-  {path : 'sub-contractor-info' , component : SubContractorInfoComponent, canActivate: [authGuard]},
-  {path :'get-invoices', component :SubContractorInvoicesComponent, canActivate :[authGuard]}
+  {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuardSubContractor]},
+  {path : 'sub-contractor-info' , component : SubContractorInfoComponent, canActivate: [authGuardSubContractor]},
+  {path :'get-invoices', component :SubContractorInvoicesComponent, canActivate :[authGuardSubContractor]}
 
 
 

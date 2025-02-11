@@ -11,13 +11,19 @@ import {SubContractor} from '../entityes/sub-contractor';
 
 export class ContractorService {
 
-  baseURL = "http://localhost:8080/";
+  baseURL = "http://localhost:8080";
 
   private authService = inject(AuthService);
   router = inject(Router);
 
 
   constructor(private http: HttpClient, router: Router) {
+  }
+
+
+  private getAuthHeaders(): { [header: string]: string } {
+    const token = sessionStorage.getItem("token");
+    return { 'Authorization': `Bearer ${token}` };
   }
 
 
@@ -29,25 +35,37 @@ export class ContractorService {
 
   getAllSubContractors() {
     const contractorId = Number(sessionStorage.getItem("userId"));
+    const headers =this.getAuthHeaders()
+
+    return this.http.get(this.baseURL + "/sub-contractors/" + contractorId, {headers});
+
+  }
+  getAllInvoices(){
+    const contractorId = Number(sessionStorage.getItem("userId"));
+    const headers =this.getAuthHeaders()
+    return this.http.get(this.baseURL + "/invoices/contractor/" + contractorId, {headers});
+  }
+
+
+  private getSubContractor(contractorId: number) {
+    const headers = this.getAuthHeaders();
+    return this.http.get<SubContractor>(this.baseURL +'/sub-contractors/get-sub/'+ contractorId, { headers });
+  }
+
+
+  updateSubContractor(subContractor: SubContractor) {
+    const contractorId = Number(sessionStorage.getItem("userId"));
     const token = sessionStorage.getItem("token");
 
-    let headers = {
-      'Authorization': `Bearer ${token}`
-    };
-    return this.http.get(this.baseURL + "sub-contractors/" + contractorId, {headers});
+    let headers = this.getAuthHeaders()
 
+
+   // return this.http.put(this.baseURL+"sub-contractor/update/" + subContractorId,{headers} );
   }
 
-  getSubContractorBasedOnContractor(){
-
+  deleteSubContractor(subContractorId: number) {
+    let headers = this.getAuthHeaders()
+    return this.http.delete(this.baseURL + "/sub-contractor/delete/" + subContractorId, {headers});
   }
 
-  updateSubContractor(subContractor :SubContractor){
-    const token = sessionStorage.getItem("token");
-    let headers = {
-      'Authorization': `Bearer ${token}`
-    };
-
-    //return this.http.put(this.baseURL+"sub-contractors/" + )
-  }
 }
