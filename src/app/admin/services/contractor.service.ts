@@ -1,4 +1,4 @@
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {inject, Injectable} from '@angular/core';
 import {Contractor} from '../entityes/contractor';
 import {AuthService} from './auth.service';
@@ -23,7 +23,7 @@ export class ContractorService {
 
   private getAuthHeaders(): { [header: string]: string } {
     const token = sessionStorage.getItem("token");
-    return { 'Authorization': `Bearer ${token}` };
+    return {'Authorization': `Bearer ${token}`};
   }
 
 
@@ -35,32 +35,32 @@ export class ContractorService {
 
   getAllSubContractors() {
     const contractorId = Number(sessionStorage.getItem("userId"));
-    const headers =this.getAuthHeaders()
+    const headers = this.getAuthHeaders()
 
     return this.http.get(this.baseURL + "/sub-contractors/" + contractorId, {headers});
 
   }
-  getAllInvoices(){
+
+  getAllInvoices() {
     const contractorId = Number(sessionStorage.getItem("userId"));
-    const headers =this.getAuthHeaders()
+    const headers = this.getAuthHeaders()
     return this.http.get(this.baseURL + "/invoices/contractor/" + contractorId, {headers});
   }
 
 
   private getSubContractor(contractorId: number) {
     const headers = this.getAuthHeaders();
-    return this.http.get<SubContractor>(this.baseURL +'/sub-contractors/get-sub/'+ contractorId, { headers });
+    return this.http.get<SubContractor>(this.baseURL + '/sub-contractors/get-sub/' + contractorId, {headers});
   }
 
-
   updateSubContractor(subContractor: SubContractor) {
-    const contractorId = Number(sessionStorage.getItem("userId"));
-    const token = sessionStorage.getItem("token");
-
-    let headers = this.getAuthHeaders()
-
-
-   // return this.http.put(this.baseURL+"sub-contractor/update/" + subContractorId,{headers} );
+    let headers = this.getAuthHeaders();
+    const url = this.baseURL + "/sub-contractors/" + subContractor.userId;
+    return this.http.put(url, {
+      "firstName": "orice nume",
+      "lastName": "asa si asa",
+      "utr": subContractor.utr
+    }, {headers});
   }
 
   deleteSubContractor(subContractorId: number) {
