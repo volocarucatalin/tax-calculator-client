@@ -12,7 +12,9 @@ import {SubContractor} from '../../../admin/entityes/sub-contractor';
 
 
 export class AllSubContractorsComponent implements OnInit{
-  subContractor: any;
+  subContractors: any;
+  selectedSubcontractor: any;
+
 
   constructor(private contractorService: ContractorService
   ) {
@@ -20,11 +22,25 @@ export class AllSubContractorsComponent implements OnInit{
   }
   ngOnInit(): void {
     let response = this.contractorService.getAllSubContractors();
-    response.subscribe((data :any) => this.subContractor = data)
+    response.subscribe((data :any) => this.subContractors = data)
+
   }
+  //1.TODO: we need the current subcontractor
+  //2.TODO: we need the new data passed to form in order to make the update
+  //3.TODO: put request to server
 
 
   onEdit(data: SubContractor) {
-    this.subContractor = data;
+    this.selectedSubcontractor = data;
+  }
+
+
+  updateSubContractor() {
+    console.log(this.selectedSubcontractor);
+    this.contractorService.updateSubContractor(this.selectedSubcontractor.utr)
+  }
+
+  deleteSubContractor(subContractorId : number){
+    this.contractorService.deleteSubContractor(subContractorId)
   }
 }

@@ -37,7 +37,17 @@ export class SubContractorService {
       'Authorization': `Bearer ${token}`
     };
     return this.httpClient.get(this.baseURL+
-      "/invoices/" + subContractorId, {headers});
+      "/invoices/sub-contractor/" + subContractorId, {headers});
+  }
+
+  updateSubContractor(){
+
+    const token = sessionStorage.getItem("token");
+    let headers = {
+      'Authorization': `Bearer ${token}`
+    };
+
+
   }
 
 }

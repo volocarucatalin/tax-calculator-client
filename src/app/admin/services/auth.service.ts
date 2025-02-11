@@ -15,9 +15,12 @@ export class AuthService {
   authURL = "http://localhost:8080/auth/authenticate"
 
   session: any;
+  role: any;
+
 
   constructor(private httpClient: HttpClient, private router: Router) {
     this.session = AuthService.getSessionToken();
+    this.role = sessionStorage.getItem('role');
   }
 
   static getSessionToken(): any {
