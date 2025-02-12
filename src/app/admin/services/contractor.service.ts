@@ -4,6 +4,7 @@ import {Contractor} from '../entityes/contractor';
 import {AuthService} from './auth.service';
 import {Router} from '@angular/router';
 import {SubContractor} from '../entityes/sub-contractor';
+import {Invoice} from '../entityes/invoice';
 
 @Injectable({
   providedIn: 'root'
@@ -68,4 +69,10 @@ export class ContractorService {
     return this.http.delete(this.baseURL + "/sub-contractor/delete/" + subContractorId, {headers});
   }
 
+  updateInvoice(invoice: Invoice) {
+      let headers = this.getAuthHeaders();
+      const invoiceId = invoice.invoiceId;
+      const status = invoice.status;
+      return this.http.put(this.baseURL +"/invoices/"+ invoiceId, status, {headers});
+  }
 }

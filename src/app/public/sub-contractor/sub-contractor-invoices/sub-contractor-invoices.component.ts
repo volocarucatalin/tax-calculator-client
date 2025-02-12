@@ -19,19 +19,11 @@ export class SubContractorInvoicesComponent implements OnInit {
     let response = this.subContractorService.getAllSubContractorsInvoices();
     response.subscribe(data => {
       this.invoices = data;
-      this.totalPayment = this.invoices.days * this.invoices.amount
-      this.invoices.totalPayment = this.totalPayment;
     })
   }
 
   checkStatus(invoice:any){
-    if(invoice.status == 'PENDING'){
-     return true
-    }
-    else {
-      return false
-    }
-
+    return invoice.status == 'PENDING';
   }
 
 }

@@ -52,38 +52,29 @@
           <td>£{{calculateTotalPayment(invoice)}}</td>
           <td>£{{calculateTax(invoice)}}</td>
           <td>£{{calculateReceivingMoney(invoice)}}</td>
+            @if(invoice.status == "PENDING"){
           <td class="text-warning">{{ invoice.status }}</td>
+            }
+            @if(invoice.status == "PAID"){
+                <td class="text-success">{{ invoice.status }}</td>
+            }
+            @if(invoice.status == "CANCELED"){
+                <td class="text-danger">{{ invoice.status }}</td>
+            }
+            @if(invoice.status == "PENDING"){
           <td>
-            <a href="#editInvoiceStatus" class="edit" data-bs-toggle="modal"><i class="material-icons"
-                                                                                data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+            <button class="btn-success" ><i class="payment material-icons" style="color: green; font-size: 20px;" (click)="onEditStatusPay(invoice)" title="Pay">&#xE254;</i></button>
+            <button class="delete" data-bs-toggle="modal"><i class="material-icons" data-bs-toggle="tooltip" (click)="onEditStatusCanceled(invoice)" title="Cancel">&#xE872;</i></button>
           </td>
+            } @else {
+                <td>
+                    No Action
+                </td>
+            }
         </tr>
         <tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</div>
-
-<!-- Edit Modal HTML -->
-<div id="editInvoiceStatus" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form>
-          <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-              PAID/CANCELLED
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-              <li><a class="dropdown-item" >PAID</a></li>
-              <li><a class="dropdown-item">CANCELLED</a></li>
-            </ul>
-          </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
-          <input type="submit" class="btn btn-info" value="Save">
-        </div>
-      </form>
     </div>
   </div>
 </div>

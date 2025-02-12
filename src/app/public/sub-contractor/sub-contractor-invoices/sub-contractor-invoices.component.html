@@ -43,11 +43,25 @@
           <td>{{invoice.date}}</td>
           <td>{{invoice.days}}</td>
           <td>{{invoice.amount }}</td>
-          <td>{{invoice.status}}</td>
+          @if(invoice.status == "PENDING"){
+          <td class="text-warning">{{invoice.status}}</td>
+          }
+          @if(invoice.status == "PAID"){
+            <td class="text-success">{{invoice.status}}</td>
+          }
+          @if(invoice.status == "CANCELED"){
+            <td class="text-danger">{{invoice.status}}</td>
+          }
+          @if(invoice.status == "PENDING"){
           <td>
             <a href="#editSubContractor" class="edit" data-bs-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" >&#xE254;</i></a>
             <a href="#deleteSubContractor" class="delete" data-bs-toggle="modal"><i class="material-icons" data-bs-toggle="tooltip" title="Delete">&#xE872;</i></a>
           </td>
+          } @else {
+            <td>
+              No Action
+            </td>
+          }
         </tr>
         <tr>
         </tbody>
