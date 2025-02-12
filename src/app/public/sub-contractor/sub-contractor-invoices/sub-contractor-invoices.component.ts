@@ -10,7 +10,7 @@ import {SubContractorService} from '../../../admin/services/sub-contractor.servi
 })
 export class SubContractorInvoicesComponent implements OnInit {
 
-  invoice: any;
+  invoices: any;
   totalPayment :any ;
 
   constructor(private subContractorService: SubContractorService) { }
@@ -18,10 +18,20 @@ export class SubContractorInvoicesComponent implements OnInit {
   ngOnInit(): void {
     let response = this.subContractorService.getAllSubContractorsInvoices();
     response.subscribe(data => {
-      this.invoice = data;
-      this.totalPayment = this.invoice.days * this.invoice.amount
-      this.invoice.totalPayment = this.totalPayment;
+      this.invoices = data;
+      this.totalPayment = this.invoices.days * this.invoices.amount
+      this.invoices.totalPayment = this.totalPayment;
     })
+  }
+
+  checkStatus(invoice:any){
+    if(invoice.status == 'PENDING'){
+     return true
+    }
+    else {
+      return false
+    }
+
   }
 
 }
