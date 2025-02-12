@@ -8,8 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContractorComponent } from './public/contractor/contractor.component';
 import { LoginComponent } from './admin/login/login.component';
-import {ContractorModule} from './public/contractor/contractor.module';
-import { ContractorInfoComponent } from './public/contractor/contractor-info/contractor-info.component';
+import { ContractorPendingInvoicesComponent } from './public/contractor/contractor-pending-invoices/contractor-pending-invoices.component';
 import { NavbarComponent } from './public/navbar/navbar.component';
 import { AllSubContractorsComponent } from './public/contractor/all-sub-contractors/all-sub-contractors.component';
 import { ContractorGeneralInformationComponent } from './public/contractor/contractor-general-information/contractor-general-information.component';
@@ -27,7 +26,7 @@ const routes: Routes=[
     CreateSubContractor,
     ContractorComponent,
     LoginComponent,
-    ContractorInfoComponent,
+    ContractorPendingInvoicesComponent,
     AllSubContractorsComponent,
     ContractorGeneralInformationComponent,
     SubContractorInfoComponent,
@@ -43,7 +42,6 @@ const routes: Routes=[
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ContractorModule,
     NavbarComponent,
   ],
   schemas: [
@@ -52,7 +50,7 @@ const routes: Routes=[
   providers: [],
   exports: [
     AppComponent,
-    ContractorInfoComponent
+    ContractorPendingInvoicesComponent
   ],
   bootstrap: [AppComponent]
 })

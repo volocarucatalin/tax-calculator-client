@@ -58,8 +58,8 @@ export class ContractorService {
     let headers = this.getAuthHeaders();
     const url = this.baseURL + "/sub-contractors/" + subContractor.userId;
     return this.http.put(url, {
-      "firstName": "orice nume",
-      "lastName": "asa si asa",
+      "firstName": subContractor.firstName,
+      "lastName": subContractor.lastName,
       "utr": subContractor.utr
     }, {headers});
   }
