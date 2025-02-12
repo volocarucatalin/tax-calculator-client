@@ -9,12 +9,30 @@ import {ContractorService} from '../../../admin/services/contractor.service';
   styleUrl: './all-invoices-contractor.component.css'
 })
 export class AllInvoicesContractorComponent implements OnInit {
-  invoice: any;
+  invoices: any;
   constructor(private contractorService: ContractorService) { }
+
   ngOnInit(): void {
     let response = this.contractorService.getAllInvoices().subscribe(data => {
-      this.invoice = data;
+      this.invoices = data;
     })
+  }
+
+
+
+  calculateTotalPayment(invoice: any) {
+    return Number(invoice.days) * Number(invoice.amount);
+  }
+
+  calculateTax(invoice: any) {
+    const totalPayment = this.calculateTotalPayment(invoice);
+    return (totalPayment*20)/100;
+  }
+
+  calculateReceivingMoney(invoice: any){
+    const totalPayment = this.calculateTotalPayment(invoice);
+    const tax = this.calculateTax(invoice);
+    return totalPayment - tax;
   }
 
 }
