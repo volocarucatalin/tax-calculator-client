@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ContractorService} from '../../../admin/services/contractor.service';
+import {Invoice} from '../../../admin/entityes/invoice';
 
 @Component({
   selector: 'app-all-invoices-contractor',
@@ -10,6 +11,7 @@ import {ContractorService} from '../../../admin/services/contractor.service';
 })
 export class AllInvoicesContractorComponent implements OnInit {
   invoices: any;
+  invoice :any;
   constructor(private contractorService: ContractorService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,26 @@ export class AllInvoicesContractorComponent implements OnInit {
     })
   }
 
+  onEditStatusPay(invoice: any) {
+    invoice.status ="PAID";
+    this.invoice = invoice;
+
+    this.updateInvoice();
+  }
+  onEditStatusCanceled(invoice: any) {
+    invoice.status = "CANCELED";
+    this.updateInvoice();
+  }
+
+
+  updateInvoice() {
+    console.log(this.invoice);
+    this.contractorService.updateInvoice(this.invoice).subscribe(
+      (response:any) => {
+      console.log("Invoice has been updated"+response);
+    }, (error:any) => {
+        console.log("Unable to update invoice" + error);})
+  }
 
 
   calculateTotalPayment(invoice: any) {
