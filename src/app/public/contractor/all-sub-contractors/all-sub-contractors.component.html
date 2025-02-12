@@ -41,7 +41,6 @@
           <td>{{ subContractor.utr }}</td>
           <td>
             <a href="#editSubContractor" class="edit" data-bs-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" (click)="onEdit(subContractor)">&#xE254;</i></a>
-            <a href="#deleteSubContractor" class="delete" data-bs-toggle="modal"><i class="material-icons" data-bs-toggle="tooltip" title="Delete" (click)="onEdit(subContractor)">&#xE872;</i></a>
           </td>
         </tr>
         <tr>
@@ -76,28 +75,3 @@
   </div>
 </div>
   }
-<!--&lt;!&ndash; Delete Modal HTML &ndash;&gt;-->
-<!--  @if(selectedSubcontractor != null){-->
-<!--<div id="deleteSubContractor" class="modal fade">-->
-<!--  <div class="modal-dialog">-->
-<!--    <div class="modal-content">-->
-<!--      <form formControlName="deleteSubContractorForm">-->
-<!--        <div class="modal-header">-->
-<!--          <h4 class="modal-title">Delete Sub-Contractor</h4>-->
-<!--          <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>-->
-<!--        </div>-->
-<!--        <div class="modal-body">-->
-<!--          <p>Are you sure you want to delete these Records?</p>-->
-<!--          <p class="text-warning"><small>This action cannot be undone.</small></p>-->
-<!--        </div>-->
-<!--        <div class="modal-footer">-->
-<!--          <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">-->
-<!--          <button type="submit" class="btn btn-danger"  (click)="deleteSubContractor(selectedSubcontractor.id)" > Delete</button>-->
-<!--        </div>-->
-<!--      </form>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-<!--  }-->
-</body>
-</html>
