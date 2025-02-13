@@ -3,7 +3,7 @@ body {
   background: linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 98));
   font-family: 'Varela Round', sans-serif;
   font-size: 13px;
-
+  height: 70vh;
 }
 
 .table-responsive {

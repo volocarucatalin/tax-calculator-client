@@ -51,7 +51,7 @@
             <td>£{{ invoice.amount }}</td>
             <td>£{{ calculateTotalPayment(invoice) }}</td>
             <td>£{{ calculateTax(invoice) }}</td>
-            <td>£{{ calculateReceivingMoney(invoice) }}</td>
+            <td class="text-success">£{{ calculateReceivingMoney(invoice) }}</td>
             <td class="text-success">{{ invoice.status }}</td>
           }
           @if (invoice.status == "CANCELLED") {

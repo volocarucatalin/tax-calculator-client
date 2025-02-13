@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ContractorService} from '../../../admin/services/contractor.service';
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-contractor-general-information',
@@ -12,6 +13,7 @@ export class ContractorGeneralInformationComponent implements OnInit {
 
   invoices: any;
   subContractors: any;
+  uniqueJobs = new Set<string>();
 
 
   constructor(private contractorService: ContractorService) {
@@ -85,29 +87,27 @@ export class ContractorGeneralInformationComponent implements OnInit {
 
 
   }
+  calculateSubContractorsFromJob(){
 
-
-
-  calculateTotalPaidInvoicesInDateRange(startDate: string, endDate: string): number {
-    // Parse the start and end dates
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-
-    let total = 0;
-
+  }
+  addJobNames() {
     for (let i = 0; i < this.invoices.length; i++) {
-      const invoice = this.invoices[i];
-      const invoiceDate = new Date(invoice.date); // Ensure the date format matches the expected structure
-
-      // Check if the invoice is paid and falls within the given date range
-      if (invoice.status === 'PAID' && invoiceDate >= start && invoiceDate <= end) {
-        total += this.calculateReceivingMoney(invoice); // Calculate total receiving money for the invoice
+      if(!this.uniqueJobs.has(this.invoices[i].jobName)){
+        this.uniqueJobs.add(this.invoices[i].jobName);
       }
     }
-
-    return total;
+    return this.uniqueJobs;
   }
 
-
-
+  getSubContractorsFromJob (invoices: any){
+    let subContractors = new Set<string>();
+    for (let i = 0; i < invoices.length; i++) {
+      if(this.uniqueJobs.has(invoices[i].jobName)){
+        if(!subContractors.has(invoices[i].subContractorId)){
+          subContractors.add(invoices[i].subContractorId);
+        }
+      }
+    }
+    return subContractors.size;
+  }
 }
