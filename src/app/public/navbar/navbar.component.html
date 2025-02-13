@@ -9,6 +9,12 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        @if (sessionStorage.getItem('role') == "SUBCONTRACTOR" || sessionStorage.getItem('role') == "CONTRACTOR"){
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/info">Instructions</a>
+          </li>
+        }
         @if (sessionStorage.getItem('role') == "CONTRACTOR") {
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/all-subContractors">Your Sub-Contractors</a>

@@ -1,0 +1,238 @@
+@if (getRole() == "CONTRACTOR"){
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator Client - Contractor Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+      color: #0056b3;
+    }
+    h1 {
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    .example-box {
+      background: #e3f2fd;
+      border-left: 4px solid #0056b3;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to the Tax Calculator Client</h1>
+  <p>Effortlessly manage your subcontractors, invoices, taxes, and financial reports all in one place. Follow the steps below to get started:</p>
+
+  <h2>1. Add Your Subcontractors</h2>
+  <p>Start by adding the subcontractors you work with:</p>
+  <ul>
+    <li>Navigate to the <strong>Subcontractors</strong> section.</li>
+    <li>Click on the <strong>"Add Subcontractor"</strong> button and provide the following details:
+      <ul>
+        <li><strong>First Name</strong></li>
+        <li><strong>Last Name</strong></li>
+        <li><strong>Unique Tax Reference (UTR)</strong></li>
+      </ul>
+    </li>
+    <li>Save the subcontractor's details for future use in invoices.</li>
+  </ul>
+
+  <h2>2. View Automatic Calculations</h2>
+  <p>Based on your input, the system will calculate:</p>
+  <ul>
+    <li><strong>Total Payment:</strong> days × amount</li>
+    <li><strong>Tax:</strong> 20% of Total Payment</li>
+    <li><strong>Receivable Money:</strong> Total Payment - Tax</li>
+  </ul>
+
+  <h2>3. Check Subcontractor-Specific Reports</h2>
+  <p>Visit the <strong>Reports</strong> section to review:</p>
+  <ul>
+    <li>Total number of subcontractors working under you.</li>
+    <li>Taxes and payments grouped by job or subcontractor.</li>
+    <li>Details of paid and unpaid invoices.</li>
+  </ul>
+
+  <h2>4. Track Paid/Unpaid Invoices</h2>
+  <p>Mark invoices as <strong>Paid</strong> or <strong>Unpaid</strong> to ensure accurate reports and real-time financial updates.</p>
+
+  <div class="example-box">
+    <h3>Example Workflow:</h3>
+    <p>You create an invoice for <strong>Job A</strong>:</p>
+    <ul>
+      <li><strong>5 days</strong> of work at <strong>£200/day</strong></li>
+      <li><strong>Total Payment:</strong> 5 × £200 = £1000</li>
+      <li><strong>Tax:</strong> 20% of £1000 = £200</li>
+      <li><strong>Receivable Money:</strong> £1000 - £200 = £800</li>
+    </ul>
+    <p>Assign this invoice to a subcontractor and repeat for other jobs!</p>
+  </div>
+
+  <h2>Why Use the Tax Calculator Client?</h2>
+  <ul>
+    <li><strong>Efficiency:</strong> Automate tax and payment calculations.</li>
+    <li><strong>Transparency:</strong> View detailed reports for every job and subcontractor.</li>
+    <li><strong>Accuracy:</strong> Avoid manual errors in tax and income calculations.</li>
+    <li><strong>Control:</strong> Manage paid and unpaid invoices with ease.</li>
+  </ul>
+
+  <h2>Start Managing Your Work with Ease!</h2>
+  <p>Get started by adding your subcontractors, uploading invoices, and letting the Tax Calculator handle the rest. Stay organized and compliant in managing your projects and taxes.</p>
+</div>
+</body>
+</html>
+}
+
+@if (getRole() == "SUBCONTRACTOR"){
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator Client - Subcontractor Info</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1, h2, h3 {
+        color: #0056b3;
+      }
+      h1 {
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 10px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin: 8px 0;
+      }
+      .example-box {
+        background: #e3f2fd;
+        border-left: 4px solid #0056b3;
+        padding: 10px;
+        margin: 20px 0;
+        border-radius: 5px;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Welcome to the Tax Calculator Client</h1>
+    <p>As a subcontractor, you can use this platform to stay informed about your jobs, payments, and tax deductions. Follow the steps below to understand how this tool helps you track your financials.</p>
+
+    <h2>1. Create Your Invoice</h2>
+    <p>Start by creating your invoice:</p>
+    <ul>
+      <li>Navigate to the <strong>Invoice</strong> section in the application.</li>
+      <li>You will see a list of invoices including:
+        <ul>
+          <li><strong>Job Name</strong></li>
+          <li><strong>Number of Days Worked</strong></li>
+          <li><strong>Payment Rate</strong> per day.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>2. Check Invoices</h2>
+    <p>Each job has an invoice associated with it. You can view the details of these invoices, including:</p>
+    <ul>
+      <li><strong>Total Payment:</strong> Calculated based on the days worked and the daily payment rate.</li>
+      <li><strong>Tax Deduction (20%):</strong> The tax amount deducted from your earnings.</li>
+      <li><strong>Net Receivable Amount:</strong> The amount you will receive after tax deductions.</li>
+    </ul>
+
+    <h2>3. Monitor Payments</h2>
+    <p>The system tracks the status of your payments. You can see whether an invoice is:</p>
+    <ul>
+      <li><strong>Paid:</strong> The payment has been completed and transferred to you.</li>
+      <li><strong>Unpaid:</strong> The payment is still pending.</li>
+    </ul>
+    <p>If you see discrepancies, contact your contractor directly for resolution.</p>
+
+    <h2>4. Understand Tax Deductions</h2>
+    <p>The platform calculates taxes based on your earnings for each job. Here’s how it works:</p>
+    <ul>
+      <li>Total Payment = <strong>Days Worked × Payment Rate</strong></li>
+      <li>Tax = <strong>20% of Total Payment</strong></li>
+      <li>Net Receivable = <strong>Total Payment - Tax</strong></li>
+    </ul>
+
+    <div class="example-box">
+      <h3>Example:</h3>
+      <p>You work on <strong>Job A</strong> for <strong>5 days</strong> with a daily payment rate of <strong>$200</strong>. Here are the calculations:</p>
+      <ul>
+        <li><strong>Total Payment:</strong> 5 × $200 = $1000</li>
+        <li><strong>Tax Deduction (20%):</strong> $1000 × 0.2 = $200</li>
+        <li><strong>Net Receivable:</strong> $1000 - $200 = $800</li>
+      </ul>
+      <p>You will receive $800 once payment is marked as <strong>Paid</strong> by the contractor.</p>
+    </div>
+
+    <h2>5. View Tax Reports</h2>
+    <p>You can view detailed tax reports that include:</p>
+    <ul>
+      <li>Total taxes deducted across all jobs.</li>
+      <li>Net earnings after tax deductions.</li>
+      <li>Detailed breakdowns for each invoice.</li>
+    </ul>
+
+    <h2>6. Keep Your Profile Updated</h2>
+    <p>Ensure your details, such as your <strong>Unique Tax Reference (UTR)</strong> and contact information, are updated in the system. This ensures smooth operations and accurate tax calculations.</p>
+
+    <h2>FAQs</h2>
+    <ul>
+      <li><strong>How is the tax calculated?</strong> The system automatically applies a flat 20% tax deduction on your total payment.</li>
+      <li><strong>What if there’s an issue with my payment?</strong> Contact your contractor for resolution or further updates.</li>
+    </ul>
+
+    <h2>Start Managing Your Work Today!</h2>
+    <p>Use the Tax Calculator Client to stay informed about your financials, taxes, and payments. It’s simple, efficient, and tailored for subcontractors' needs.</p>
+
+  </div>
+  </body>
+  </html>
+}

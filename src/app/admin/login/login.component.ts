@@ -28,7 +28,7 @@ export class LoginComponent {
     };
 
     this.authService.login(this.login);
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/info');
 
   }
 
