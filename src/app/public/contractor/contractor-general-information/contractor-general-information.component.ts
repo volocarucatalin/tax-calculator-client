@@ -12,7 +12,7 @@ export class ContractorGeneralInformationComponent implements OnInit {
 
   invoices: any;
   subContractors: any;
-  invoiceNames: string[] = [];
+
 
   constructor(private contractorService: ContractorService) {
     this.invoices = contractorService.getAllInvoices().subscribe(
@@ -86,15 +86,28 @@ export class ContractorGeneralInformationComponent implements OnInit {
 
   }
 
-  calculateJobs(){
+
+
+  calculateTotalPaidInvoicesInDateRange(startDate: string, endDate: string): number {
+    // Parse the start and end dates
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
     let total = 0;
+
     for (let i = 0; i < this.invoices.length; i++) {
-      if(this.invoices[i].jobName != this.invoices[i+1].jobName) {
-        total++;
+      const invoice = this.invoices[i];
+      const invoiceDate = new Date(invoice.date); // Ensure the date format matches the expected structure
+
+      // Check if the invoice is paid and falls within the given date range
+      if (invoice.status === 'PAID' && invoiceDate >= start && invoiceDate <= end) {
+        total += this.calculateReceivingMoney(invoice); // Calculate total receiving money for the invoice
       }
     }
+
     return total;
   }
+
 
 
 }

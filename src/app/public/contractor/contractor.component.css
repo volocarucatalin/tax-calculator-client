@@ -2,6 +2,10 @@ body {
   color: #fff;
   background: #19aa8d;
   font-family: 'Roboto', sans-serif;
+  background: -webkit-linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 144));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 98))
 }
 .form-control {
   font-size: 15px;
