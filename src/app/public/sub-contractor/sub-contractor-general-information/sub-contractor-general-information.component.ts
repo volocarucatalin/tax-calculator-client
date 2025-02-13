@@ -26,15 +26,39 @@ export class SubContractorGeneralInformationComponent implements OnInit{
   }
 
   invoiceTotal(){
-    return this.contractorService.calculateTotalPayment(this.invoices);
+    let total = 0;
+    for (let i = 0; i < this.invoices.length; i++) {
+      if(this.invoices[i].status == 'PAID'){
+        total++;
+      }
+    }
+   return total;
   }
 
-  calculateTotalPaidInvoices(){
 
+
+  calculateTotalPaidInvoices(){
+    let total = 0;
+    for (let i = 0; i < this.invoices.length; i++) {
+      if(this.invoices[i].status == 'PAID'){
+        const totalInvoice = this.contractorService.calculateReceivingMoney(this.invoices[i])
+        total += totalInvoice;
+      }
+    }
+    return total;
   }
 
   calculateTotalSubContractorsTax(){
+    let total = 0;
+    for (let i = 0; i < this.invoices.length; i++) {
+      if(this.invoices[i].status == 'PAID') {
+        const totalInvoice = this.contractorService.calculateTax(this.invoices[i])
+        total += totalInvoice;
+      }
+    }
+    return total;
+
+
 
   }
-
 }
