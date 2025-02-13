@@ -56,11 +56,8 @@
             <td class="text-warning">{{ invoice.status }}</td>
 
             <td>
-              <button class="btn-success"><i class="payment material-icons" style="color: green; font-size: 20px;"
-                                             (click)="onEditStatusPay(invoice)" title="Pay">&#xE254;</i></button>
-              <button class="delete" data-bs-toggle="modal"><i class="material-icons" data-bs-toggle="tooltip"
-                                                               (click)="onEditStatusCanceled(invoice)" title="Cancel">&#xE872;</i>
-              </button>
+              <a  href="/get-invoices-contractor" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit" (click)="onEditStatusPay(invoice)">&#xE254;</i></a>
+              <a  href="/get-invoices-contractor" class = "delete"><i class="material-icon" data-bs-toggle="tooltip" title="Cancel" (click)="onEditStatusCanceled(invoice)">&#xE254;</i></a>
             </td>
           }
         </tr>
