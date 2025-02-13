@@ -20,6 +20,7 @@ import {
 import {
   SubContractorGeneralInformationComponent
 } from './public/sub-contractor/sub-contractor-general-information/sub-contractor-general-information.component';
+import {InstructionsComponent} from './public/instructions/instructions.component';
 
 const routes: Routes = [
   {path :'login',component: LoginComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path : 'get-invoices-contractor', component :AllInvoicesContractorComponent, canActivate :[authGuardContractor]},
   {path : 'general-info-contractor', component : ContractorGeneralInformationComponent, canActivate :[authGuardContractor]},
 
+  {path :'info' , component : InstructionsComponent},
   {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuardSubContractor]},
   {path :'get-invoices', component :SubContractorInvoicesComponent, canActivate :[authGuardSubContractor]},
   {path:'info-sub-contractor', component: SubContractorGeneralInformationComponent,canActivate: [authGuardSubContractor]},

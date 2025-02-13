@@ -17,6 +17,7 @@ import { SubContractorGeneralInformationComponent } from './public/sub-contracto
 import { InvoiceComponent } from './public/invoice/invoice.component';
 import { AllInvoicesContractorComponent } from './public/contractor/all-inoices-contractor/all-invoices-contractor.component';
 import { FooterComponent } from './public/footer/footer.component';
+import { InstructionsComponent } from './public/instructions/instructions.component';
 const routes: Routes=[
 ]
 
@@ -34,6 +35,7 @@ const routes: Routes=[
     InvoiceComponent,
     AllInvoicesContractorComponent,
     FooterComponent,
+    InstructionsComponent,
   ],
   imports: [
     HttpClientModule,
