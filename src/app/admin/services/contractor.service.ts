@@ -75,4 +75,18 @@ export class ContractorService {
       const status = invoice.status;
       return this.http.put(this.baseURL +"/invoices/"+ invoiceId, status, {headers});
   }
+  calculateTotalPayment(invoice: any) {
+    return Number(invoice.days) * Number(invoice.amount);
+  }
+
+  calculateTax(invoice: any) {
+    const totalPayment = this.calculateTotalPayment(invoice);
+    return (totalPayment*20)/100;
+  }
+
+  calculateReceivingMoney(invoice: any){
+    const totalPayment = this.calculateTotalPayment(invoice);
+    const tax = this.calculateTax(invoice);
+    return totalPayment - tax;
+  }
 }

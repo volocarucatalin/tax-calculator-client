@@ -12,7 +12,6 @@ import { ContractorPendingInvoicesComponent } from './public/contractor/contract
 import { NavbarComponent } from './public/navbar/navbar.component';
 import { AllSubContractorsComponent } from './public/contractor/all-sub-contractors/all-sub-contractors.component';
 import { ContractorGeneralInformationComponent } from './public/contractor/contractor-general-information/contractor-general-information.component';
-import { SubContractorInfoComponent } from './public/sub-contractor/sub-contractor-info/sub-contractor-info.component';
 import { SubContractorInvoicesComponent } from './public/sub-contractor/sub-contractor-invoices/sub-contractor-invoices.component';
 import { SubContractorGeneralInformationComponent } from './public/sub-contractor/sub-contractor-general-information/sub-contractor-general-information.component';
 import { InvoiceComponent } from './public/invoice/invoice.component';
@@ -30,7 +29,6 @@ const routes: Routes=[
     ContractorPendingInvoicesComponent,
     AllSubContractorsComponent,
     ContractorGeneralInformationComponent,
-    SubContractorInfoComponent,
     SubContractorInvoicesComponent,
     SubContractorGeneralInformationComponent,
     InvoiceComponent,
