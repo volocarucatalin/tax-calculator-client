@@ -28,7 +28,8 @@ export class ContractorPendingInvoicesComponent implements OnInit {
     this.updateInvoice();
   }
   onEditStatusCanceled(invoice: any) {
-    invoice.status = "CANCELED";
+    invoice.status = "CANCELLED";
+    this.invoice = invoice;
     this.updateInvoice();
   }
 
