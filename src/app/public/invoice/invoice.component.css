@@ -1,7 +1,6 @@
 body {
-  color: #fff;
-  background: #19aa8d;
   font-family: 'Roboto', sans-serif;
+  height: 70vh;
 }
 .form-control {
   font-size: 15px;

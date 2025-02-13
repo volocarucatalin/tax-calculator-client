@@ -1,8 +1,11 @@
 body {
-  color: #566787;
-  background: #f5f5f5;
+  background: -webkit-linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 144));
+  background: linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 98));
   font-family: 'Varela Round', sans-serif;
   font-size: 13px;
+}
+html{
+  height: 70vh;
 }
 .table-responsive {
   margin: 30px 0;

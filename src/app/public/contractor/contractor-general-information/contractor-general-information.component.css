@@ -1,3 +1,7 @@
 body {
-  background-color: #f5f7fa;
+  background-color: #18bf49;
+  background: -webkit-linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 144));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(25, 170, 141), rgb(37, 252, 98));
+
 }

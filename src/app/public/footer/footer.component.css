@@ -1,0 +1,19 @@
+footer {
+
+  color: #fff;
+  position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #adb5bd;
+}
