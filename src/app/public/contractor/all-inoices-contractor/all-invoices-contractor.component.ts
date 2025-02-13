@@ -43,18 +43,15 @@ export class AllInvoicesContractorComponent implements OnInit {
 
 
   calculateTotalPayment(invoice: any) {
-    return Number(invoice.days) * Number(invoice.amount);
+    return this.contractorService.calculateTotalPayment(invoice);
   }
 
   calculateTax(invoice: any) {
-    const totalPayment = this.calculateTotalPayment(invoice);
-    return (totalPayment*20)/100;
+    return this.contractorService.calculateTax(invoice);
   }
 
   calculateReceivingMoney(invoice: any){
-    const totalPayment = this.calculateTotalPayment(invoice);
-    const tax = this.calculateTax(invoice);
-    return totalPayment - tax;
+    return this.contractorService.calculateReceivingMoney(invoice);
   }
 
 }

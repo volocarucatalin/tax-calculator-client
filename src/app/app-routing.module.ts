@@ -8,7 +8,6 @@ import {authGuardContractor, authGuardSubContractor} from './auth.guard';
 import {ContractorComponent} from './public/contractor/contractor.component';
 import {AllSubContractorsComponent} from './public/contractor/all-sub-contractors/all-sub-contractors.component';
 import {InvoiceComponent} from './public/invoice/invoice.component';
-import {SubContractorInfoComponent} from './public/sub-contractor/sub-contractor-info/sub-contractor-info.component';
 import {
   SubContractorInvoicesComponent
 } from './public/sub-contractor/sub-contractor-invoices/sub-contractor-invoices.component';
@@ -18,6 +17,9 @@ import {
 import {
   ContractorGeneralInformationComponent
 } from './public/contractor/contractor-general-information/contractor-general-information.component';
+import {
+  SubContractorGeneralInformationComponent
+} from './public/sub-contractor/sub-contractor-general-information/sub-contractor-general-information.component';
 
 const routes: Routes = [
   {path :'login',component: LoginComponent},
@@ -31,8 +33,8 @@ const routes: Routes = [
   {path : 'general-info-contractor', component : ContractorGeneralInformationComponent, canActivate :[authGuardContractor]},
 
   {path : 'create-invoice' , component : InvoiceComponent, canActivate :[authGuardSubContractor]},
-  {path : 'sub-contractor-info' , component : SubContractorInfoComponent, canActivate: [authGuardSubContractor]},
-  {path :'get-invoices', component :SubContractorInvoicesComponent, canActivate :[authGuardSubContractor]}
+  {path :'get-invoices', component :SubContractorInvoicesComponent, canActivate :[authGuardSubContractor]},
+  {path:'info-sub-contractor', component: SubContractorGeneralInformationComponent,canActivate: [authGuardSubContractor]},
 
 
 

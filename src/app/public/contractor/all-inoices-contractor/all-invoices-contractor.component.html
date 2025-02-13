@@ -42,23 +42,30 @@
                 </tr>
                 <tbody>
                 <tr *ngFor="let invoice of invoices">
-                    @if (invoice.status == "CANCELED" || invoice.status == "PAID") {
-                        <td>{{ invoice.firstName }} {{ invoice.lastName }}</td>
-                        <td>{{ invoice.utr }}</td>
-                        <td>{{ invoice.jobName }}</td>
-                        <td>{{ invoice.date }}</td>
-                        <td>{{ invoice.days }}</td>
-                        <td>£{{ invoice.amount }}</td>
-                        <td>£{{ calculateTotalPayment(invoice) }}</td>
-                        <td>£{{ calculateTax(invoice) }}</td>
-                        <td>£{{ calculateReceivingMoney(invoice) }}</td>
                         @if (invoice.status == "PAID") {
-                            <td class="text-success">{{ invoice.status }}</td>
+                          <td>{{ invoice.firstName }} {{ invoice.lastName }}</td>
+                          <td>{{ invoice.utr }}</td>
+                          <td>{{ invoice.jobName }}</td>
+                          <td>{{ invoice.date }}</td>
+                          <td>{{ invoice.days }}</td>
+                          <td>£{{ invoice.amount }}</td>
+                          <td>£{{ calculateTotalPayment(invoice) }}</td>
+                          <td>£{{ calculateTax(invoice) }}</td>
+                          <td>£{{ calculateReceivingMoney(invoice) }}</td>
+                          <td class="text-success">{{ invoice.status }}</td>
                         }
                         @if (invoice.status == "CANCELED") {
+                          <td>{{ invoice.firstName }} {{ invoice.lastName }}</td>
+                          <td>{{ invoice.utr }}</td>
+                          <td>{{ invoice.jobName }}</td>
+                          <td>{{ invoice.date }}</td>
+                          <td>{{ invoice.days }}</td>
+                          <td>£{{ invoice.amount }}</td>
+                          <td>£NON</td>
+                          <td>£NON</td>
+                          <td>£NON</td>
                             <td class="text-danger">{{ invoice.status }}</td>
                         }
-                    }
                 </tr>
                 <tr>
                 </tbody>

@@ -12,6 +12,14 @@ export class SubContractorService {
 
   constructor(private httpClient : HttpClient) { }
 
+  private getAuthHeaders(): { [header: string]: string } {
+    const token = sessionStorage.getItem("token");
+    return {
+      'Authorization': `Bearer ${token}`
+    };
+  }
+
+
   addSubContractor(subContractor : SubContractor){
     subContractor.contractorId = Number(sessionStorage.getItem('userId'));
     console.log(subContractor);
@@ -50,4 +58,9 @@ export class SubContractorService {
 
   }
 
+  deleteInvoice(id: number) {
+    const headers = this.getAuthHeaders();
+    return this.httpClient.delete(this.baseURL + "/invoices/" + id, {headers});
+
+  }
 }
